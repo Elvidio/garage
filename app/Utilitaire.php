@@ -2,18 +2,19 @@
 
 namespace App;
 
-class Utilitaire Extends vehicule
+class Utilitaire Extends Vehicle implements Article
 {
-    public int $kmCount;
-    public int $volume;
+    private int $kmCount;
+    private int $volume;
 
-    public function __construct(string $kmCount, int $volume)
+    public function __construct(int $kmCount, int $volume, string $name, int $price, string $marque, int $constructionYear)
     {
+      parent:: __construct($brandname, $name, $price);
       $this->kmCount = $kmCount;
       $this->volume = $volume;
     }
 
-    public function popularity(): int
+    public function popularity(): string
     {
       if ($this->volume > 11) {
 
@@ -26,13 +27,14 @@ class Utilitaire Extends vehicule
       }
     }
 
-    public function prix(): vehicule
+    public function givePrice(): float
     {
-      return $this->price = $price + ($volume*10)
+      return $this->price = $this->price + ($this->volume*10);
+      return $this->price;
     }
 
-    public function denomination(): vehicule
+    public function giveName(): string
     {
-      return $this->marque." ".$this->$name;
+      return $this->brandname." ".$this->name;
     }
 }

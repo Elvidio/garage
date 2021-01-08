@@ -5,6 +5,11 @@ namespace App;
 class Marque
 {
 
-  public string $name;
+  public string $brandname;
+
+  public construct($brandname)
+  {
+    $this->$brandname;
+  }
 
 }

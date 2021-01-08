@@ -3,14 +3,23 @@
 
 namespace App;
 
-class sapinDesodorisant
+class Fir implements Article
 {
-  public string $name;
-  public int $prix = 5;
+  protected string $firname;
 
-  public function __construct(string $name, 5)
+  public function __construct(string $firname)
   {
-    $this->name = $name;
-    $this->prix = 5;
+    $this->firname = $firname;
+
+  }
+
+  public function givePrice(): float
+  {
+    return 5;
+  }
+
+  public function giveName(): string
+  {
+    return $this->name;
   }
 }

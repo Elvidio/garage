@@ -2,9 +2,11 @@
 
 namespace App;
 
-abstract class vehicle {
-  public string $name;
-  public int $price;
+abstract class Vehicle
+{
+
+  protected string $name;
+  protected int $price;
 
   public function __construct(string $name, int $price)
   {
@@ -12,6 +14,6 @@ abstract class vehicle {
     $this->price = $price;
   }
 
-  abstract public function popularity(): vehicule;
+  abstract public function popularity(): String;
 
 }

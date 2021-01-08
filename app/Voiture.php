@@ -2,19 +2,17 @@
 
 namespace App;
 
-Use DateTime;
-
-class Voiture extends vehicule
+class Voiture extends Vehicle implements Article
 {
-    public int $kmCount;
-    private DateTime $constructionYear;
+    protected int $kmCount;
+    protected int $constructionYear;
 
-
-    public function __construct(int $kmCount, DateTime $constructionYear)
+    public function __construct(int $kmCount, string $name, int $price, int $constructionYear, string $brandname)
     {
+        parent::__construct($name, $brandname, $price);
         $this->kmCount = $kmCount;
         $this->constructionYear = $constructionYear;
-        $this->prix = $prix;
+
     }
 
     public function usury(): int
@@ -22,26 +20,26 @@ class Voiture extends vehicule
       return $this->kmCount * $this->constructionYear;
     }
 
-    public function popularity(): int
+    public function popularity(): string
     {
       if ($this->constructionYear > 2010) {
 
-        return popularity() ="popularité bonne";
+        return "popularité bonne";
 
       } else {
 
-        return popularity() ="popularité mauvaise";
+        return "popularité mauvaise";
 
       }
     }
 
-    public function tarif(): vehicule
+    public function givePrice(): float
     {
-      return $this->price / usury();
+      return $this->price / $this->usury();
     }
 
-    public function denomination(): vehicule
+    public function giveName(): string
     {
-      return $this->marque." ".$this->$name;
+      return $this->brandname." ".$this->name;
     }
 }

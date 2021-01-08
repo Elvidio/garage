@@ -4,7 +4,8 @@ namespace App;
 
 interface Article
 {
-  public string giveName();
-  public int givePrice();
+  public function givePrice(): float;
   
+  public function giveName(): string;
+
 }
